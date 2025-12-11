@@ -17,6 +17,7 @@ public class LogisticsMain {
             System.out.println("2. Add a Delivery Drone");
             System.out.println("3. List All Vehicles");
             System.out.println("4. Sort by Capacity");
+            System.out.println("5. Open GUI Dashboard");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -73,6 +74,12 @@ public class LogisticsMain {
                 case 4:
                     manager.sortVehicles();
                     manager.listVehicles(); //Show the sorted list immediately
+                    break;
+
+                case 5:
+                    //Create the GUI window and pass the list to it
+                    FleetGUI gui = new FleetGUI(manager.vehicleList);
+                    gui.setVisible(true);
                     break;
 
                 case 0:
